@@ -1,0 +1,50 @@
+<div class="row align-items-end">
+  <div class="form-group col">
+    <label for="value">Value</label>
+    <input type="text" class="form-control" [(ngModel)]="searchDTO.value" name="value" />
+  </div>
+  <div class="form-group col">
+    <label for="type">Type</label>
+    <select class="form-control" [(ngModel)]="searchDTO.type" name="type">
+      <option [ngValue]="undefined" selected>Select Category</option>
+      <option *ngFor="let parameterType of parameterKeys" [value]="parameterType">{{ parameterType | enum: 'PARAMETERTYPE' }}</option>
+    </select>
+  </div>
+  <div class="form-group col-auto">
+    <button class="btn btn-success" (click)="doSearch()">Search</button>
+  </div>
+</div>
+<div class="row m-4">
+  <h2 class="mr-4">Parameters</h2>
+  <button class="btn btn-primary" (click)="open(null)">
+    <i class="fa fa-plus"></i> Add New Parameter
+  </button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Type</th>
+      <th scope="col">Value</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let parameter of parameters; let i = index">
+    <tr>
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ parameter.type| enum: 'PARAMETERTYPE' }}</td>
+
+      <td>{{ parameter.value }}</td>
+
+      <td>
+        <button class="btn btn-secondary mr-2" (click)="open(parameter)">
+          <i class="fa fa-edit"></i> Edit
+        </button>
+
+        <button class="btn btn-danger mr-2" (click)="deleteParam(parameter.id)">
+          <i class="fa fa-trash"></i> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

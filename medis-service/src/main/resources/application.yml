@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: medis-service
+      uri: 'mongodb://localhost:27017/medis-service?replicaSet=mersys'
+      mapping-base-package: io.mersys.medis
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: "684081716163-c6c1en976hs3t20sevo3oq4bjqq9jm8c.apps.googleusercontent.com"
+            client-secret: "ethratHe1-3n47txkmiwGFBz"
+
+app:
+  auth:
+    tokenSecret: p3bgJJud6lAIcb0tGcZuoMQnpaYr8aVrID8Y57HRrzXP7
+server:
+  port: 8888
+

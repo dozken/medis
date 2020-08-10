@@ -1,0 +1,22 @@
+.main-form{
+  width: 100%;
+  margin: 15px;
+
+}
+
+.forms{
+  margin: 20px;
+}
+
+.light-blue-backdrop {
+  background-color: transparent;
+}
+
+.modalCenter {
+  margin: 0;
+  position: absolute;
+  top: 42%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+}
+

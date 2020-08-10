@@ -1,0 +1,43 @@
+<div class="container">
+<div class="card container" style="margin-top:30px" *ngFor="let contacts of data.address">
+  <div class="card-body">
+    <img src="assets/img/user.png" class="rounded-circle" alt="User" width="100px" height="100px" />
+    <h4><label>{{ data.name + ' ' + data.surname + ' ' + data.patronymic }}</label></h4>
+    <div class="row">
+      <div class="col">
+        <p class="card-text">Пол: {{' ' + data.gender }} </p>
+        <p class="card-text">Телофон: {{' ' + contacts.phone_number }} </p>
+        <p class="card-text">ИИН: {{' ' + data.pin }} </p>
+      </div>
+      <div class="col">
+        <p class="card-text">Дата рождения: {{' ' + data.dateOfBirth }} </p>
+        <p class="card-text">Адрес: {{' ' + contacts.region + ', ' + contacts.city + ', ' + contacts.address_type + ', ' + contacts.address }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card container" style="margin-top:30px" *ngFor="let disease of data.diseases">
+  <div class="card-body">
+    <h5 class="card-title">Заболевания</h5>
+    <hr/>
+    <p class="text"> Название: {{ disease.diseaseName }} </p>
+    <p class="text"> Промежуток: {{ disease.startDate + ' ' + disease.endDate }} </p>
+    <p class="text"> Описание: {{ disease.description }} </p>
+  </div>
+</div>
+
+<div class="card container" style="margin-top:30px" *ngFor="let allergy of data.allergy">
+  <div class="card-body">
+    <h5 class="card-title">Аллергия</h5>
+    <hr/>
+    <p class="text">  Категория: {{ allergy.category }} </p>
+    <p class="text">  Аллерген: {{ allergy.allergen }} </p>
+    <p class="text">  Степень: {{ allergy.degree }} </p>
+  </div>
+
+
+</div>
+<button type="submit" class="btn btn-success" style="margin-top: 3%">Сохранить</button>
+</div>
+

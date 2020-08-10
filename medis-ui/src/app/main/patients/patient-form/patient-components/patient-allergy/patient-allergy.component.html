@@ -1,0 +1,52 @@
+<div class="container">
+  <h5 class="text-center">Аллергия</h5>
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-4">
+      <button class="btn btn-default" (click)="open()"><i class="fa fa-plus"></i> Добавить аллергию</button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center" *ngIf="content">
+    <div class="form-group col-md-4">
+      <form>
+        <div class="form-group">
+          <label>Категория</label>
+          <select class="form-control" [(ngModel)]="searchDTO.value" name="value" (click)="filter(n)" #n>
+            <option *ngFor="let childs of parameters; let i = index" [value]="childs.value">{{ childs.value }}</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <label>Аллерген</label>
+            <select class="form-control" name="allergen" [(ngModel)]="allergy.allergen" (click)="filtering()" #f>
+              <option *ngFor="let childAllergens of childs" [value]="childAllergens">{{ childAllergens }}</option>
+              <option [ngValue]="null">другое</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <label>другое</label>
+            <input
+              type="text"
+              placeholder="другое"
+              name="another"
+              [(ngModel)]="another"
+              class="form-control"
+              [disabled]="disableAnother"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Степень</label>
+          <select class="form-control" name="degree" [(ngModel)]="allergy.degree">
+            <option *ngFor="let x of degrees" [value]="x">{{ x }}</option>
+          </select>
+        </div>
+      </form>
+      <div class="form-row align-items-end">
+            <div class="form-group col"><button type="button" class="btn btn-success" (click)="submit()">Сохранить</button></div>
+
+            <div class="form-group col"><button type="button" class="btn btn-danger" (click)="delete()">Удалить</button></div>
+          </div>
+    </div>
+  </div>
+</div>

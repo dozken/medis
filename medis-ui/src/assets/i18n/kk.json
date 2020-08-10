@@ -1,0 +1,28 @@
+{
+  "ENUM": {
+    "SAMPLETYPE": {
+      "TYPE1": "Түр 1",
+      "TYPE2": "Түр 2",
+      "TYPE3": "Түр 3"
+    },
+    "GENRETYPE": {
+      "GENRE1": "Жанр 1",
+      "GENRE2": "Жанр 2",
+      "GENRE3": "Жанр 3"
+    },
+    "PARAMETERTYPE":{
+     "DISEASES": "Ауру",
+    "ALLERGY_CATEGORY":"Аллергия категориясы",
+    "ALLERGEN":"Аллерген",
+    "REGION":"Облыс",
+    "CITY":"Қала"
+
+    },
+
+    "DEGREETYPE":{
+      "HIGH": "Жогары",
+      "LOW": "Томен",
+      "MEDIUM": "Орташа"
+    }
+  }
+}

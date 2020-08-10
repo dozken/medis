@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title">Sample Dialog</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" class="container needs-validation" novalidate>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input ngbAutofocus type="text" class="form-control" formControlName="name" required />
+    </div>
+    <div class="form-group">
+      <label for="artist">Artist</label> <input type="text" class="form-control" formControlName="artist" />
+    </div>
+    <div class="form-group">
+      <label for="artist">Release Date</label> <input type="date" class="form-control" formControlName="releaseDate" />
+    </div>
+    <div class="form-group">
+      <label for="type">Genre</label>
+      <select class="form-control" formControlName="genre" required>
+        <option *ngFor="let songGenre of genreKeys" [value]="songGenre">{{
+          songGenre | enum: 'GENRETYPE'
+        }}</option>
+      </select>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" [disabled]="!form.valid" (click)="doSave()">Save</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(null)">Close</button>
+</div>

@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: test
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: medis-service-test
+      uri: 'mongodb://localhost:27017/medis-service-test?replicaSet=mersys'
+      mapping-base-package: io.mersys.medis
+server:
+  port: 10344

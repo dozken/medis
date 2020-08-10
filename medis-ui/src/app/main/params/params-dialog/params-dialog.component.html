@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{ title }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <select class="form-control" name="paramName" #n formControlName="type">
+          <option></option>
+          <option
+            *ngFor="let parama of parameterTypeValues"
+            [value]="parama"
+            [selected]="parama == parameterTypeValues[index]"
+            >{{ parama | enum: 'PARAMETERTYPE' }}</option
+          >
+        </select>
+      </div>
+      <div class="form-group">
+
+        <input type="text" class="form-control" name="name" formControlName="value" value="{{ param.value }}" />
+
+      </div>
+      <div class="form-check">
+        <input
+          type="checkbox"
+          [checked]="checked"
+          [disabled]="disabled"
+          class="form-check-input"
+          (click)="checking()"
+          id="exampleCheck1"
+        />
+        <label class="form-check-label" for="exampleCheck1">Check it for add child</label>
+      </div>
+
+      <div formArrayName="childParams" *ngIf="checked">
+        <div class="form-group">
+          <button type="button" class="btn btn-secondary" (click)="addChild()">Добавить опции</button>
+        </div>
+
+        <div class="form-group">
+          <div class="row" *ngFor="let child of form.controls['childParams'].controls; let j = index">
+            <div class="col-1">
+              <div class="form-group">
+                <label>{{ j + 1 }}</label>
+              </div>
+            </div>
+            <div class="col-5" [formGroupName]="j">
+
+              <input type="text" class="form-control" formControlName="value" value="{{ child.value.value }}" />
+
+            </div>
+            <div class="col-1">
+              <button class="btn btn-danger mr-2" (click)="deleteChild(j)"><i class="fa fa-trash"></i> Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" data-dismiss="modal" [disabled]="!form.valid" (click)="save()">
+      Save
+    </button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(null)">Close</button>
+  </div>
+</div>

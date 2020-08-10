@@ -1,0 +1,16 @@
+.text-center{
+  margin-top: 3%;
+  font-style: Arial;
+  margin-bottom: 3%;
+}
+.form-group{
+  font-size: 0.35cm;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: gray;
+}
+.custom-control-label{
+  font-size: 0.42cm;
+  color: black;
+
+}
+

@@ -1,0 +1,46 @@
+<div class="row align-items-end">
+  <div class="form-group col">
+    <label for="name">Name</label> <input type="text" class="form-control" [(ngModel)]="searchDTO.name" name="name" />
+  </div>
+  <div class="form-group col">
+    <label for="artist">Artist</label>
+    <input type="text" class="form-control" [(ngModel)]="searchDTO.artist" name="artist" />
+  </div>
+  <div class="form-group col">
+    <label for="type">Genre</label>
+    <select class="form-control" [(ngModel)]="searchDTO.genre" name="genre">
+      <option [ngValue]="undefined" selected>Select Genre</option>
+      <option *ngFor="let songType of songKeys" [value]="songType">{{ songType | enum: 'GENRETYPE' }}</option>
+    </select>
+  </div>
+  <div class="form-group col-auto"><button class="btn btn-success" (click)="doSearch()">Search</button></div>
+</div>
+<div class="row m-4">
+  <h2 class="mr-4">Songs</h2>
+  <button class="btn btn-primary" (click)="doNew()"><i class="fa fa-plus"></i> Add New Song</button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let song of songs; let index = index">
+      <th scope="row">{{ index + 1 }}</th>
+      <td>{{ song.name }}</td>
+      <td>{{ song.artist }}</td>
+      <td>{{ song.genre | enum: 'GENRETYPE' }}</td>
+      <td>{{ song.releaseDate }}</td>
+      <td>
+        <button class="btn btn-secondary mr-2" (click)="doEdit(song)"><i class="fa fa-edit"></i> Edit</button>
+        <button class="btn btn-danger mr-2" (click)="doDelete(song)"><i class="fa fa-trash"></i> Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

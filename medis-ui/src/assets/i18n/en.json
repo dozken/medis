@@ -1,0 +1,27 @@
+{
+  "ENUM": {
+    "SAMPLETYPE": {
+      "TYPE1": "Type 1",
+      "TYPE2": "Type 2",
+      "TYPE3": "Type 3"
+    },
+    "GENRETYPE": {
+      "GENRE1": "Genre 1",
+      "GENRE2": "Genre 2",
+      "GENRE3": "Genre 3"
+    },
+    "PARAMETERTYPE":{
+     "DISEASES": "Diseases",
+    "ALLERGY_CATEGORY":"Allergy Category",
+    "ALLERGEN":"Allergen",
+    "REGION":"Region",
+    "CITY":"City"
+
+    },
+    "DEGREETYPE":{
+      "HIGH": "High",
+      "LOW": "Low",
+      "MEDIUM": "Medium"
+    }
+  }
+}

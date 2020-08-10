@@ -1,0 +1,48 @@
+<div class="container">
+  <h5 class="text-center">Заболевания</h5>
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-4">
+      <button
+        type="button"
+        class="btn btn-light"
+        (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed"
+        aria-controls="collapseExample"
+      >
+        + Добавить заболевание
+      </button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-4">
+      <div id="collapseExample" [ngbCollapse]="isCollapsed">
+        <h6 style="color:black">Новое заболевание</h6>
+        <br />
+        <div class="form-group">
+          <label for="inputDisease">Название заболевания</label>
+          <select id="inputDisease" class="form-control" [(ngModel)]="disease.diseaseName" name="value">
+            <option *ngFor="let childs of parameters; let i = index" [value]="childs.value">{{childs.value}}</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="startDate">Дата начала</label> <input class="form-control" type="date" id="startDate" name="startDate" [(ngModel)]="disease.startDate"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="endDate">Дата завершеия</label> <input class="form-control" type="date" id="endDate"  name="startDate" [(ngModel)]="disease.endDate"/>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="description">Описание заболевания</label>
+            <textarea class="form-control" rows="5" id="comment" placeholder="Введите описание" [(ngModel)]="disease.description"></textarea>
+          </div>
+          <div class="form-row align-items-end">
+            <div class="form-group col"><button type="button" class="btn btn-success" (click)="submit()">Сохранить</button></div>
+
+            <div class="form-group col"><button type="button" class="btn btn-danger" (click)="delete()">Удалить</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center"></div>
+</div>

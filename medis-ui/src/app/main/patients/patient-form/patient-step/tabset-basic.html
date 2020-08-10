@@ -1,0 +1,81 @@
+
+<ngb-tabset #tabs>
+  <!---
+  <ngb-tab title="Patient">
+
+      <ng-template ngbTabContent>
+
+            <form>
+                <div class="text-center">
+                    <img src="assets/img/user.png" class="rounded-circle" alt="User" width="100px" height="100px">
+                  </div>
+                <div class="d-flex justify-content-center">
+                    <div class="form-group col-md-3">
+                      <label for="inputName">Name</label>
+                      <input type="text" class="form-control" id="inputName" placeholder="Erter your name">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                      <div class="form-group col-md-3">
+                        <label for="inputSurName">Surname</label>
+                        <input type="text" class="form-control" id="inputSurName" placeholder="Erter your surname">
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                    <div class="form-group col-md-3">
+                      <label for="inputPatronymic">Patronymic</label>
+                      <input type="text" class="form-control" id="inputPatronymic" placeholder="Patronymic">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                      <div class="form-group col-md-3">
+                        <label for="inputPin">PIN</label>
+                        <input type="text" class="form-control" id="inputPin" placeholder="PIN">
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="form-group col-md-3">
+                          <label for="inputDate">Date Of Birth</label>
+                          <input type="date" class="form-control" id="inputDate" placeholder="Date Of Birth">
+                        </div>
+                      </div>
+                      </form>
+
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>Contact</ng-template>
+      <ng-template ngbTabContent>
+
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Disabled" [disabled]="true">
+      <ng-template ngbTabContent>
+
+      </ng-template>
+    </ngb-tab>
+  -->
+
+    <ngb-tab title="Информация" id="1">
+      <ng-template ngbTabContent><app-patient-information></app-patient-information></ng-template>
+    </ngb-tab>
+    <ngb-tab title="Контакты" id="2"  >
+      <ng-template ngbTabContent><app-patient-contacts></app-patient-contacts></ng-template>
+    </ngb-tab>
+    <ngb-tab title="Заболевания" id="3" >
+      <ng-template ngbTabContent><app-patient-diseases></app-patient-diseases></ng-template>
+    </ngb-tab>
+    <ngb-tab title="Аллергия" id="4" >
+      <ng-template ngbTabContent><app-patient-allergy></app-patient-allergy></ng-template>
+    </ngb-tab>
+
+
+    <ngb-tab title="Подтвердить">
+      <ng-template ngbTabContent><app-patient-approve></app-patient-approve></ng-template>
+    </ngb-tab>
+
+
+  </ngb-tabset>
+
+
+  <!--<button class="btn btn-primary" (click)="xa(i=i+1)">Далее</button>-->

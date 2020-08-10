@@ -1,0 +1,73 @@
+<div class="container">
+  <h5 class="text-center">Контакты</h5>
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-2">
+      <label for="region">Область</label>
+      <select class="form-control" [(ngModel)]="searchDTO.value" name="value" (click)="filter(n)" #n>
+        <option *ngFor="let childs of parameters; let i = index" [value]="childs.value">{{ childs.value }}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="city">Город</label>
+      <select class="form-control" name="city" [(ngModel)]="address.city" (click)="filter(f)" #f>
+        <option *ngFor="let childCities of childs" [value]="childCities">{{ childCities }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-4">
+      <label for="addressType">Тип адреса</label> <br />
+       <div class="row" style="color:black">
+          <div class="col">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gridRadios"
+                id="gridRadios1"
+                value="Фактический адрес"
+                checked
+                (change)="mdbradioChangeHandler($event)"
+              />
+              <label class="form-check-label" for="gridRadios1"> Фактический адрес </label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Адрес прописки" (change)="mdbradioChangeHandler($event)"/>
+              <label class="form-check-label" for="gridRadios2"> Адрес прописки</label>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-4">
+      <div class="form-group">
+        <label for="inputAddress">Адрес</label>
+        <input type="text" class="form-control" id="inputAddress" name="address" [(ngModel)] ="address.address_name" placeholder="Введите адрес проживания" />
+        <div class="invalid-feedback">Заполните это поле</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-4">
+      <div class="form-group">
+        <label for="inputPhoneNumber">Телефон</label>
+        <input type="text" class="form-control" id="inputPhoneNumber" name="phone_number" [(ngModel)] ="address.phone_number"  placeholder="Введите телефон" />
+        <div class="invalid-feedback">Заполните это поле</div>
+      </div>
+      <div class="form-row align-items-end">
+          <div class="form-group col"><button type="button" class="btn btn-success" (click)="submit()">Сохранить</button></div>
+
+          <div class="form-group col"><button type="button" class="btn btn-danger" (click)="delete()">Удалить</button></div>
+        </div>
+    </div>
+
+  </div>
+
+
+</div>

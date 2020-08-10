@@ -1,0 +1,28 @@
+{
+  "ENUM": {
+    "SAMPLETYPE": {
+      "TYPE1": "Тип 1",
+      "TYPE2": "Тип 2",
+      "TYPE3": "Тип 3"
+    },
+    "GENRETYPE": {
+      "GENRE1": "Жанр 1",
+      "GENRE2": "Жанр 2",
+      "GENRE3": "Жанр 3"
+    },
+    "PARAMETERTYPE":{
+     "DISEASES": "Заболевание",
+    "ALLERGY_CATEGORY":"Категория аллергии",
+    "ALLERGEN":"Аллерген",
+    "REGION":"Область",
+    "CITY":"Город"
+
+    },
+    "DEGREETYPE":{
+      "HIGH": "Высокий",
+      "LOW": "Низкий",
+      "MEDIUM": "Средний"
+    }
+}
+}
+

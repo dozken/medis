@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h4 class="modal-title">Patient Dialog</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="form"  class="container needs-validation" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" formControlName="name" required/>
+            </div>
+            <div class="form-group">
+              <label for="surname">SurName</label>
+              <input type="text" class="form-control" formControlName="surname">
+            </div>
+            <div class="form-group">
+              <label for="patronymic">Patronymic</label>
+              <input type="text" class="form-control" formControlName="patronymic">
+            </div>
+            <div class="form-group">
+              <label for="pin">PIN</label>
+              <input type="text" class="form-control" formControlName="pin">
+            </div>
+            <div class="form-group">
+              <label for="dateOfBirth">Date Of Birth</label>
+              <input type="date" class="form-control" formControlName="dateOfBirth">
+            </div>
+        </form>
+  </div>
+  <div class="modal-footer">
+    <button type="but
+    ton" class="btn btn-outline-dark" [disabled]="!form.valid" (click)="activeModal.close(form.value)">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(null)">Close</button>
+  </div>

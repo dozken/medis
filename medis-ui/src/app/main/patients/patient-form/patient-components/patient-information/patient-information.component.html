@@ -1,0 +1,73 @@
+<form style="padding: 20px">
+  <div class="d-flex justify-content-center">
+    <img src="assets/img/user.png" class="rounded-circle" alt="User" width="100px" height="100px" />
+  </div>
+  <div class="d-flex justify-content-center"><input type="file" /></div>
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-3">
+      <label for="inputName" class="font-style">Фамилия</label>
+      <input
+        type="text"
+        class="form-control"
+        name="surname"
+        placeholder="Фамилия"
+        [(ngModel)]="patient.surname"
+        (click)="submit()"
+      />
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-3">
+      <label for="inputName" class="font-style">Имя</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Имя"
+        name="name"
+        [(ngModel)]="patient.name"
+        (click)="submit()"
+      />
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-3">
+      <label for="inputName" class="font-style">Отчество</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Отчество"
+        name="patronymic"
+        [(ngModel)]="patient.patronymic"
+        (click)="submit()"
+      />
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-3">
+      <label for="inputName" class="font-style">ИИН</label>
+      <input
+        type="text"
+        class="form-control"
+        name="pin"
+        placeholder="ИИН"
+        [(ngModel)]="patient.pin"
+        (click)="submit()"
+      />
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-3">
+      <label for="inputName" class="font-style">Дата рождения</label>
+      <input
+        type="date"
+        class="form-control"
+        name="dateOfBirth"
+        placeholder="birthday"
+        [(ngModel)]="patient.dateOfBirth"
+        (click)="submit()"
+      />
+    </div>
+  </div>
+</form>
